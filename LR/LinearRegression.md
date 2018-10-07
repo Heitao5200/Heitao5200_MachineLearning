@@ -1,7 +1,7 @@
 # 线性回归算法
 
 <script type="text/javascript"async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 $$ y =ax_i +b$$
 * 解决回归问题
 * 思想简单，容易实现
