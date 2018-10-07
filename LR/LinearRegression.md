@@ -24,7 +24,7 @@
 ## 简单线性回归算法思想
 
 在简单线性回归中，我们将训练集特征作为横坐标，训练集label作为纵坐标，那么我们的最终目的就是
-寻找出一条直线![image](../picture/简单线性回归.PNG)$$y = ax_i +b$$当给出新的特征时，
+寻找出一条直线![image](../picture/简单线性回归.PNG)<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>当给出新的特征时，
 我们希望能够带入到![image](../picture/简单线性回归.PNG)中，求出预测值。
 
 ### 公式推导
