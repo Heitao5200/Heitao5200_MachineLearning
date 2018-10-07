@@ -1,4 +1,8 @@
 # 线性回归算法
+
+<script type="text/javascript"async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+
+$$ y =ax_i +b$$
 * 解决回归问题
 * 思想简单，容易实现
 * 许多强大的非线性模型的基础
@@ -24,8 +28,8 @@
 ## 简单线性回归算法思想
 
 在简单线性回归中，我们将训练集特征作为横坐标，训练集label作为纵坐标，那么我们的最终目的就是
-寻找出一条直线![image](../picture/简单线性回归.PNG)<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>当给出新的特征时，
-我们希望能够带入到![image](../picture/简单线性回归.PNG)中，求出预测值。
+寻找出一条直线!<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>当给出新的特征时，
+我们希望能够带入到!<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>中，求出预测值。
 
 ### 公式推导
 找到a和b使得 ![image](../picture/损失函数1.PNG) 尽可能小，
