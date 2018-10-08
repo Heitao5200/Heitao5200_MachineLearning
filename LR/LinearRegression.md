@@ -21,7 +21,7 @@ $$ y =ax_i +b$$
 最终会发现他们是沿着一条直线分布。线性回归算法的最终目的就是寻找出一条直线、一个面或者体(根据数据的维度而定)，
 最大程度上"拟合"样本特征和输出label之间的关系。
 
-![image](../picture/线性回归算法思想.PNG)
+![image](picture/线性回归算法思想.PNG)
 
 特征是一维时，线性模型在二维空间构成一条直线；
 特征是二维时，线性模型在三维空间中构成一个平面；
@@ -31,17 +31,17 @@ $$ y =ax_i +b$$
 ## 简单线性回归算法思想
 
 在简单线性回归中，我们将训练集特征作为横坐标，训练集label作为纵坐标，那么我们的最终目的就是
-寻找出一条直线!<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>当给出新的特征时，
-我们希望能够带入到!<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>中，求出预测值。
+寻找出一条直线<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>当给出新的特征时，
+我们希望能够带入到<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>中，求出预测值。
 
 ### 公式推导
-找到a和b使得!<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$\sum_{i=1}^{m} (y^{(i) - ax^{(i)} -b })^2$$ " /></a> 尽可能小，
+找到a和b使得<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$\sum_{i=1}^{m} (y^{(i) - ax^{(i)} -b })^2$$ " /></a> 尽可能小，
 这是一个典型的最小二乘法问题：最小化误差的平方
 损失函数是计算期望值和预测值的差值，期望其差值(也就是损失)越来越小
 
-![image](../picture/公式推导1.PNG)
+![image](picture/公式推导1.PNG)
 
-![image](../picture/公式推导2.PNG) 
+![image](picture/公式推导2.PNG) 
 
 ## 多元线性回归思想
 在多元线性回归中，我们已经不能再简单地将训练集特征作为横坐标，训练集label作为纵坐标了，
@@ -51,9 +51,28 @@ $$ y =ax_i +b$$
 求出预测值。
 
 ### 公式推导(多元线性回归的正规方程解)
-![image](../picture/多元线性回归公式推导.PNG)
+![image](picture/多元线性回归公式推导.PNG)
 
 ## [梯度下降法](https://blog.csdn.net/Heitao5200/article/details/82953725)
+## 梯度下降法
+* 梯度下降法不是一个机器学习算法
+
+* 是一种基于搜索的最优化方法(优化目标函数)
+
+* 作用:最小化一个损失函数
+
+* 梯度上升法:最大化一个效用函数
+ 
+* 在求解机器学习算法的模型参数，即无约束优化问题时， 梯度下降（Gradient Descent）是最常采用的方法之一，
+ 另一种常用的方法是最小二乘法
+
+
+
+### 梯度下降法简介
+以下是定义了一个损失函数以后，参数 theta 对应的损失函数 J 的值对应的示例图， 
+我们需要找到使得损失函数值 J 取得最小值对应的 theta（这里是二维平面，也就是说数据集的特征只有一个）， 在直线方程中，导数代表斜率； 在曲线方程中，导数代表切线斜率。这里导数即为梯度。
+
+
 
 ## 机器学习算法的一种思路 
 通过分析问题，确定问题的损失函数，优化损失函数，获得机器学习的模型
@@ -68,7 +87,7 @@ skearn中使用的是R-Squared评价
 GridSearchCV网格搜索出来的最优超参数使用的评价标准是GridSearchCV里面的score评分，并不是sklearn里面的score评分，sklearn采用的R_Squared评分
 
 ## 参数详解
-![image](../picture/参数详解.PNG)
+![image](picture/参数详解.PNG)
 
 
 ## 问题
