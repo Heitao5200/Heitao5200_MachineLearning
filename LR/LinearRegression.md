@@ -1,6 +1,9 @@
 # 线性回归算法
 
 <script type="text/javascript"async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+
+
+
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 $$ y =ax_i +b$$
 * 解决回归问题
@@ -32,7 +35,7 @@ $$ y =ax_i +b$$
 我们希望能够带入到!<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>中，求出预测值。
 
 ### 公式推导
-找到a和b使得 ![image](../picture/损失函数1.PNG) 尽可能小，
+找到a和b使得!<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$\sum_{i=1}^{m} (y^{(i) - ax^{(i)} -b })^2$$ " /></a> 尽可能小，
 这是一个典型的最小二乘法问题：最小化误差的平方
 损失函数是计算期望值和预测值的差值，期望其差值(也就是损失)越来越小
 
@@ -42,8 +45,9 @@ $$ y =ax_i +b$$
 
 ## 多元线性回归思想
 在多元线性回归中，我们已经不能再简单地将训练集特征作为横坐标，训练集label作为纵坐标了，
-但是我们的最终目的依旧是找到函数![image](../picture/多元线性回归目标函数.PNG) 
-当给出新的特征时，我们希望能够带入到![image](../picture/多元线性回归目标函数.PNG)中，
+但是我们的最终目的依旧是找到函数找到a和b使得!<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$\hat y^{(i)} = X_b \theta $$ " /></a> 尽可能小，
+
+当给出新的特征时，我们希望能够带入到!<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$\hat y^{(i)} = X_b \theta $$ " /></a> 中，
 求出预测值。
 
 ### 公式推导(多元线性回归的正规方程解)
