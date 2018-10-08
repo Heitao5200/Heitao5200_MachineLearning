@@ -1,11 +1,6 @@
 # 线性回归算法
 
-<script type="text/javascript"async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 
-
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-$$ y =ax_i +b$$
 * 解决回归问题
 * 思想简单，容易实现
 * 许多强大的非线性模型的基础
@@ -108,7 +103,6 @@ GridSearchCV网格搜索出来的最优超参数使用的评价标准是GridSear
 
 [Latex在线编辑公式2](http://latex.codecogs.com/eqneditor/editor.php)
 
-[机器学习算法 - 线性回归————Spareribs](https://www.jianshu.com/p/b37d0b84f576)
 
 [机器学习算法 - 线性回归————Datawhale](https://blog.csdn.net/Datawhale/article/details/82931967)
 
