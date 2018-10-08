@@ -65,7 +65,7 @@ $$ y =ax_i +b$$
 
 skearn中使用的是R-Squared评价
 
-GridSearchCV网格搜索出来的最优超参数使用的评价标准是GridSearchCV里面的score评分，并不是sklearn里面的score评分
+GridSearchCV网格搜索出来的最优超参数使用的评价标准是GridSearchCV里面的score评分，并不是sklearn里面的score评分，sklearn采用的R_Squared评分
 
 ## 参数详解
 ![image](../picture/参数详解.PNG)
