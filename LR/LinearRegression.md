@@ -10,7 +10,6 @@
 
 样本特征有多个的线性回归问题，为**多元线性回归。**(由此可见，线性并不代表直线)
 
-
 线性回归算法将无数的训练集数据放在一个坐标系中，以坐标系的一个维度作为label，其他维度作为特征，
 最终会发现他们是沿着一条直线分布。线性回归算法的最终目的就是寻找出一条直线、一个面或者体(根据数据的维度而定)，
 最大程度上"拟合"样本特征和输出label之间的关系。
@@ -33,12 +32,24 @@
 本文中**损失函数=代价函数**，目标函数是一个与他们相关但更广的概念，
 对于目标函数来说在有约束条件下的最小化就是损失函数（loss function）[详情参见](https://www.zhihu.com/question/52398145)
 
-
 ## 简单线性回归算法思想
 
 在简单线性回归中，我们将训练集特征作为横坐标，训练集label作为纵坐标，那么我们的最终目的就是
 寻找出一条直线<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>当给出新的特征时，
 我们希望能够带入到<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>中，求出预测值。
+
+### 确定损失函数
+
+#### 确定损失函数的方法
+* 最小二乘法
+
+* 最大似然估计
+
+#### 确定目标函数(损失函数中添加正则项)
+* L1正则化(L1范数)
+
+* L2正则化(L2范数)
+
 
 ### 公式推导
 找到a和b使得<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$\sum_{i=1}^{m} (y^{(i) - ax^{(i)} -b })^2$$ " /></a> 尽可能小，
@@ -64,9 +75,7 @@
 
 * 是一种基于搜索的最优化方法(优化目标函数)
 
-* 作用:最小化一个损失函数
-
-* 梯度上升法:最大化一个效用函数
+* 作用:求目标函数的最小值
  
 * 在求解机器学习算法的模型参数，即无约束优化问题时， 梯度下降（Gradient Descent）是最常采用的方法之一，
  另一种常用的方法是最小二乘法
