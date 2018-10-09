@@ -177,9 +177,32 @@ skearn中使用的是R-Squared评价
 
 GridSearchCV网格搜索出来的最优超参数使用的评价标准是GridSearchCV里面的score评分，并不是sklearn里面的score评分，sklearn采用的R_Squared评分
 
+## 线性回归推广
+### 多项式回归
+我们之前讨论的线性回归模型<a href="http://www.codecogs.com/eqnedit.php?latex=y=\theta_0&space;&plus;&space;\theta_1x_1&space;&plus;&space;\theta_2x_2&plus;\cdots&space;&plus;\theta_nx_n" target="_blank"><img src="http://latex.codecogs.com/gif.latex?y=\theta_0&space;&plus;&space;\theta_1x_1&space;&plus;&space;\theta_2x_2&plus;\cdots&space;&plus;\theta_nx_n" title="y=\theta_0 + \theta_1x_1 + \theta_2x_2+\cdots +\theta_nx_n" /></a>
+都是x的一次方，如果增加二次方，那么模型就变成了多项式回归。这里写一个只有两个特征的 p 次方多项式回归的模型：
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=y=\theta_0&space;&plus;&space;\theta_1x_1&space;&plus;&space;\theta_2x_2&plus;&space;\theta_3x_1^2&plus;\theta_4x_2^2&plus;&space;\theta_5x_1x_2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?y=\theta_0&space;&plus;&space;\theta_1x_1&space;&plus;&space;\theta_2x_2&plus;&space;\theta_3x_1^2&plus;\theta_4x_2^2&plus;&space;\theta_5x_1x_2" title="y=\theta_0 + \theta_1x_1 + \theta_2x_2+ \theta_3x_1^2+\theta_4x_2^2+ \theta_5x_1x_2" /></a>
+
+令<a href="http://www.codecogs.com/eqnedit.php?latex=x_0=1,x_1=x_1,x_2=x_2,x_3=x_1^2,x_4=x_2^2,x5=x_1x_2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?x_0=1,x_1=x_1,x_2=x_2,x_3=x_1^2,x_4=x_2^2,x5=x_1x_2" title="x_0=1,x_1=x_1,x_2=x_2,x_3=x_1^2,x_4=x_2^2,x5=x_1x_2" /></a>
+
+得：<a href="http://www.codecogs.com/eqnedit.php?latex=y=\theta_0&space;&plus;&space;\theta_1x_1&space;&plus;&space;\theta_2x_2&plus;&space;\theta_3x_3&plus;\theta_4x_4&plus;&space;\theta_5x_5" target="_blank"><img src="http://latex.codecogs.com/gif.latex?y=\theta_0&space;&plus;&space;\theta_1x_1&space;&plus;&space;\theta_2x_2&plus;&space;\theta_3x_3&plus;\theta_4x_4&plus;&space;\theta_5x_5" title="y=\theta_0 + \theta_1x_1 + \theta_2x_2+ \theta_3x_3+\theta_4x_4+ \theta_5x_5" /></a>
+
+这样我们就将不是线性回归的函数变成了线性回归的函数，这是一个五元一次线性回归。
+
+### 广义线性回归
+我们的输出 Y 不满足和 X 的线性关系，但是 lnY 和 X 满足线性关系，模型函数如下：
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=lnY=X\theta" target="_blank"><img src="http://latex.codecogs.com/gif.latex?lnY=X\theta" title="lnY=X\theta" /></a>
+
+这样对与每个样本的输入 y，我们用 lny 去对应， 从而仍然可以用线性回归的算法去处理这个问题。我们把 Iny 一般化，假设这个函数是单调可微函数 g(.), 则一般化的广义线性回归形式是：
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=g(Y)=X(\theta)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?g(Y)=X(\theta)" title="g(Y)=X(\theta)" /></a>或者
+<a href="http://www.codecogs.com/eqnedit.php?latex=Y=g^{-1}(X\theta)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Y=g^{-1}(X\theta)" title="Y=g^{-1}(X\theta)" /></a>
+这个函数 g(.) 我们通常称为联系函数。
+
 ## 参数详解
 ![image](picture/参数详解.PNG)
-
 
 ## 问题
 1. 个人感觉，线性回归的可解释性比较好，大家会把他用作特征选择时的参考吗？具体怎么实现？
