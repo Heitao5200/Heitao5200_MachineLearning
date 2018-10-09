@@ -109,6 +109,7 @@
 1.确定损失函数，求其梯度表达式
 
 **损失函数：**
+
 <a href="http://www.codecogs.com/eqnedit.php?latex=J(\theta&space;_0,\theta&space;_1,\cdots&space;,&space;\theta&space;_n)&space;=&space;\frac{1}{2m}&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?J(\theta&space;_0,\theta&space;_1,\cdots&space;,&space;\theta&space;_n)&space;=&space;\frac{1}{2m}&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}" title="J(\theta _0,\theta _1,\cdots , \theta _n) = \frac{1}{2m} \sum_{i=1}^{m}(y^{(i)} - \hat y^{(i)})^{2}" /></a>
 
 <a href="http://www.codecogs.com/eqnedit.php?latex==&space;\frac{1}{2m}&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;(\theta&space;_0&space;x_0^{(i)}&plus;&space;\theta_1&space;x_1^{(i)}&plus;&space;\theta_2&space;x_2^{(i)}&plus;\cdots&space;&plus;&space;\theta_n&space;x_n^{(i)}&space;))^2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?=&space;\frac{1}{2m}&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;(\theta&space;_0&space;x_0^{(i)}&plus;&space;\theta_1&space;x_1^{(i)}&plus;&space;\theta_2&space;x_2^{(i)}&plus;\cdots&space;&plus;&space;\theta_n&space;x_n^{(i)}&space;))^2" title="= \frac{1}{2m} \sum_{i=1}^{m}(y^{(i)} - (\theta _0 x_0^{(i)}+ \theta_1 x_1^{(i)}+ \theta_2 x_2^{(i)}+\cdots + \theta_n x_n^{(i)} ))^2" /></a>
