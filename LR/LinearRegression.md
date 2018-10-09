@@ -1,8 +1,4 @@
 # 线性回归算法 
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-$$y= ax+b$$
 
 * 解决回归问题
 * 思想简单，容易实现
@@ -25,6 +21,14 @@ $$y= ax+b$$
 特征是二维时，线性模型在三维空间中构成一个平面；
 特征是三维时，则最终模型在四维空间中构成一个体；
 以此类推…
+
+## 目标函数、损失函数、代价函数
+* 损失函数（Loss Function ）是定义在单个样本上的，算的是一个样本的误差。
+* 代价函数（Cost Function ）是定义在整个训练集上的，是所有样本误差的平均，也就是损失函数的平均。
+* 目标函数（Object Function）定义为：最终需要优化的函数。等于经验风险+结构风险（也就是Cost Function + 正则化项）。
+注意：有的地方将损失函数和代价函数没有细分也就是两者等同的。本文中**损失函数=代价函数**，目标函数是一个与他们相关但更广的概念，
+对于目标函数来说在有约束条件下的最小化就是损失函数（loss function）[详情参见](https://www.zhihu.com/question/52398145)
+
 
 ## 简单线性回归算法思想
 
