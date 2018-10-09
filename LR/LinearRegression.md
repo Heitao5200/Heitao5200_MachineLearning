@@ -75,7 +75,81 @@
 我们需要找到使得损失函数值 J 取得最小值对应的 theta（这里是二维平面，也就是说数据集的特征只有一个）， 在直线方程中，导数代表斜率； 在曲线方程中，导数代表切线斜率。这里导数即为梯度。
 ![image](picture/梯度下降1.png)
 
+<a href="http://www.codecogs.com/eqnedit.php?latex=\eta" target="_blank">
+<img src="http://latex.codecogs.com/gif.latex?\eta" title="\eta" /></a>
 称为学习率，它是梯度下降法的一个超参数，它的取值反映获得最优解的速度，取值不合适时甚至得不到最优解。
+
+## 在三维平面，数据集的特征有两个的情况：
+![image](picture/梯度下降2.png)
+
+### 注意
+并不是所有的损失函数用梯度下降法都能够找到全局的最优解，有可能是一个局部最优解。 当然，如果损失函数是凸函数，梯度下降法得到的解就一定是全局最优解。
+
+## 解决方案
+* 多次运行，随机化初始点
+
+* 梯度下降法的初始点也是一个超参数
+
+* 设置合适的学习率。一般为0.01
+
+## 梯度下降法求解(使损失函数尽可能小)
+### 数据集处理
+
+每个样本增加一个特征<a href="http://www.codecogs.com/eqnedit.php?latex=x_0&space;=1" target="_blank"><img src="http://latex.codecogs.com/gif.latex?x_0&space;=1" title="x_0 =1" /></a>
+<a href="http://www.codecogs.com/eqnedit.php?latex=\begin{pmatrix}&space;&(x_1^0)&space;&(x_2^0)&space;&\cdots&space;&(x_4^0)&space;&(y^0)\\&space;&(x_1^1)&space;&(x_2^1)&space;&\cdots&space;&(x_4^1)&space;&(y^1)\\&space;&&space;\cdots&space;\\&space;&(x_1^n)&space;&(x_2^n)&space;&\cdots&space;&(x_4^n)&space;&(y^n)&space;\end{pmatrix}&space;\Rightarrow&space;\begin{pmatrix}&space;&(x_0^0)&space;&(x_1^0)&space;&(x_2^0)&space;&\cdots&space;&(x_4^0)&space;&(y^0)\\&space;&(x_0^1)&space;&(x_1^1)&space;&(x_2^1)&space;&\cdots&space;&(x_4^1)&space;&(y^1)\\&space;&&space;\cdots&space;\\&space;&(x_0^n)&space;&(x_1^n)&space;&(x_2^n)&space;&\cdots&space;&(x_4^n)&space;&(y^n)&space;\end{pmatrix}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;&(x_1^0)&space;&(x_2^0)&space;&\cdots&space;&(x_4^0)&space;&(y^0)\\&space;&(x_1^1)&space;&(x_2^1)&space;&\cdots&space;&(x_4^1)&space;&(y^1)\\&space;&&space;\cdots&space;\\&space;&(x_1^n)&space;&(x_2^n)&space;&\cdots&space;&(x_4^n)&space;&(y^n)&space;\end{pmatrix}&space;\Rightarrow&space;\begin{pmatrix}&space;&(x_0^0)&space;&(x_1^0)&space;&(x_2^0)&space;&\cdots&space;&(x_4^0)&space;&(y^0)\\&space;&(x_0^1)&space;&(x_1^1)&space;&(x_2^1)&space;&\cdots&space;&(x_4^1)&space;&(y^1)\\&space;&&space;\cdots&space;\\&space;&(x_0^n)&space;&(x_1^n)&space;&(x_2^n)&space;&\cdots&space;&(x_4^n)&space;&(y^n)&space;\end{pmatrix}" title="\begin{pmatrix} &(x_1^0) &(x_2^0) &\cdots &(x_4^0) &(y^0)\\ &(x_1^1) &(x_2^1) &\cdots &(x_4^1) &(y^1)\\ & \cdots \\ &(x_1^n) &(x_2^n) &\cdots &(x_4^n) &(y^n) \end{pmatrix} \Rightarrow \begin{pmatrix} &(x_0^0) &(x_1^0) &(x_2^0) &\cdots &(x_4^0) &(y^0)\\ &(x_0^1) &(x_1^1) &(x_2^1) &\cdots &(x_4^1) &(y^1)\\ & \cdots \\ &(x_0^n) &(x_1^n) &(x_2^n) &\cdots &(x_4^n) &(y^n) \end{pmatrix}" /></a>
+
+有<a href="http://www.codecogs.com/eqnedit.php?latex=\hat&space;y^{(i)}&space;=&space;\theta&space;_0&space;x_0^{(i)}&plus;&space;\theta_1&space;x_1^{(i)}&plus;&space;\theta_2&space;x_2^{(i)}&plus;\cdots&space;&plus;&space;\theta_n&space;x_n^{(i)}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\hat&space;y^{(i)}&space;=&space;\theta&space;_0&space;x_0^{(i)}&plus;&space;\theta_1&space;x_1^{(i)}&plus;&space;\theta_2&space;x_2^{(i)}&plus;\cdots&space;&plus;&space;\theta_n&space;x_n^{(i)}" title="\hat y^{(i)} = \theta _0 x_0^{(i)}+ \theta_1 x_1^{(i)}+ \theta_2 x_2^{(i)}+\cdots + \theta_n x_n^{(i)}" /></a>
+### 求解方法
+* 代数法
+* 矩阵法(向量法)
+
+#### 二者步骤一样：
+
+1.确定损失函数，求其梯度表达式
+
+**损失函数：**
+<a href="http://www.codecogs.com/eqnedit.php?latex=J(\theta&space;_0,\theta&space;_1,\cdots&space;,&space;\theta&space;_n)&space;=&space;\frac{1}{2m}&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}&space;=&space;\frac{1}{2m}&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;(\theta&space;_0&space;x_0^{(i)}&plus;&space;\theta_1&space;x_1^{(i)}&plus;&space;\theta_2&space;x_2^{(i)}&plus;\cdots&space;&plus;&space;\theta_n&space;x_n^{(i)}&space;))^2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?J(\theta&space;_0,\theta&space;_1,\cdots&space;,&space;\theta&space;_n)&space;=&space;\frac{1}{2m}&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}&space;=&space;\frac{1}{2m}&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;(\theta&space;_0&space;x_0^{(i)}&plus;&space;\theta_1&space;x_1^{(i)}&plus;&space;\theta_2&space;x_2^{(i)}&plus;\cdots&space;&plus;&space;\theta_n&space;x_n^{(i)}&space;))^2" title="J(\theta _0,\theta _1,\cdots , \theta _n) = \frac{1}{2m} \sum_{i=1}^{m}(y^{(i)} - \hat y^{(i)})^{2} = \frac{1}{2m} \sum_{i=1}^{m}(y^{(i)} - (\theta _0 x_0^{(i)}+ \theta_1 x_1^{(i)}+ \theta_2 x_2^{(i)}+\cdots + \theta_n x_n^{(i)} ))^2" /></a>
+
+系数<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{1}{2m}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{1}{2m}" title="\frac{1}{2m}" /></a>
+是为了方便求偏导
+
+**梯度表达式：**
+<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\partial&space;J(\theta&space;_0,\theta&space;_1,\cdots&space;,&space;\theta&space;_n)}{\partial&space;\theta&space;_j}&space;=&space;\frac{1}{m}\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x_j^i" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\partial&space;J(\theta&space;_0,\theta&space;_1,\cdots&space;,&space;\theta&space;_n)}{\partial&space;\theta&space;_j}&space;=&space;\frac{1}{m}\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x_j^i" title="\frac{\partial J(\theta _0,\theta _1,\cdots , \theta _n)}{\partial \theta _j} = \frac{1}{m}\sum_{i=1}^{m}(y^{(i)} - \hat y^{(i)})^{2}x_j^i" /></a>
+
+2.学习率乘以损失函数的梯度，得到当前位置下降的距离
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=$$\eta&space;\frac{\partial&space;J(\theta&space;_0,\theta&space;_1,\cdots&space;,&space;\theta&space;_n)}{\partial&space;\theta_j}$$" target="_blank"><img src="http://latex.codecogs.com/gif.latex?$$\eta&space;\frac{\partial&space;J(\theta&space;_0,\theta&space;_1,\cdots&space;,&space;\theta&space;_n)}{\partial&space;\theta_j}$$" title="$$\eta \frac{\partial J(\theta _0,\theta _1,\cdots , \theta _n)}{\partial \theta_j}$$" /></a>
+
+3.确定是否对于所有的 ​ 梯度下降的距离都小于 ​ ,如果小于 ​ 则算法终止，当前所有的 ​ 即为所求。
+
+4.更新 ​ ,其更新表达式如下。更新完毕后继续转入步骤 1.
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=$$\theta&space;_j^i&space;=&space;\theta&space;_j^i&space;-&space;\eta&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x_j^i$$" target="_blank"><img src="http://latex.codecogs.com/gif.latex?$$\theta&space;_j^i&space;=&space;\theta&space;_j^i&space;-&space;\eta&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x_j^i$$" title="$$\theta _j^i = \theta _j^i - \eta \sum_{i=1}^{m}(y^{(i)} - \hat y^{(i)})^{2}x_j^i$$" /></a>
+
+## 三种梯度下降法(BGD、SGD、MBGD)
+### 批量梯度下降法（Batch Gradient Descent）
+
+批量梯度下降法，是梯度下降法最常用的形式，具体做法也就是在更新参数时使用所有的样本来进行更新
+
+**更新公式：**
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=$$\theta&space;_j^i&space;=&space;\theta&space;_j^i&space;-&space;\eta&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x^i$$" target="_blank"><img src="http://latex.codecogs.com/gif.latex?$$\theta&space;_j^i&space;=&space;\theta&space;_j^i&space;-&space;\eta&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x^i$$" title="$$\theta _j^i = \theta _j^i - \eta \sum_{i=1}^{m}(y^{(i)} - \hat y^{(i)})^{2}x^i$$" /></a>
+
+### 随机梯度下降法（Stochastic Gradient Descent）
+
+求梯度时没有用所有的 m 个样本的数据，而是仅仅选取一个样本 i 来求梯度
+
+更新公式：
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=$$\theta&space;_j^i&space;=&space;\theta&space;_j^i&space;-&space;\eta&space;(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x^i$$" target="_blank"><img src="http://latex.codecogs.com/gif.latex?$$\theta&space;_j^i&space;=&space;\theta&space;_j^i&space;-&space;\eta&space;(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x^i$$" title="$$\theta _j^i = \theta _j^i - \eta (y^{(i)} - \hat y^{(i)})^{2}x^i$$" /></a>
+
+### 小批量梯度下降法（Mini-batch Gradient Descent）
+
+小批量梯度下降法是批量梯度下降法和随机梯度下降法的折衷，也就是对于 m 个样本， 采用 x 个样本来迭代，1<x<m。一般可以取 x=10
+
+更新公式：​
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=$$\theta&space;_j^i&space;=&space;\theta&space;_j^i&space;-&space;\eta&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x^i$$" target="_blank"><img src="http://latex.codecogs.com/gif.latex?$$\theta&space;_j^i&space;=&space;\theta&space;_j^i&space;-&space;\eta&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x^i$$" title="$$\theta _j^i = \theta _j^i - \eta \sum_{i=1}^{m}(y^{(i)} - \hat y^{(i)})^{2}x^i$$" /></a>
 
 ## 机器学习算法的一种思路 
 通过分析问题，确定问题的损失函数，优化损失函数，获得机器学习的模型
@@ -109,8 +183,7 @@ GridSearchCV网格搜索出来的最优超参数使用的评价标准是GridSear
 
 [Latex公式编辑手册1](https://www.zybuluo.com/codeep/note/163962)
 
-[Latex在线编辑公式2](http://latex.codecogs.com/eqneditor/editor.php)
-
+[Latex在线编辑公式](http://www.codecogs.com/latex/eqneditor.php)
 
 [机器学习算法 - 线性回归————Datawhale](https://blog.csdn.net/Datawhale/article/details/82931967)
 
@@ -120,4 +193,3 @@ GridSearchCV网格搜索出来的最优超参数使用的评价标准是GridSear
 
 [numpy.hstack和numpy.vstack操作](https://blog.csdn.net/m0_37393514/article/details/79538748)
 
-[线性模型 ——YYT](https://github.com/yangyyt/powerToGrow/blob/master/AlgorithmReview/LinearModel.ipynb)
