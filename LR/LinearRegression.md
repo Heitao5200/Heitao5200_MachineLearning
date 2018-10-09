@@ -38,17 +38,47 @@
 寻找出一条直线<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>当给出新的特征时，
 我们希望能够带入到<a href="https://www.codecogs.com/eqnedit.php?latex=$$y&space;=&space;ax_i&space;&plus;b$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y&space;=&space;ax_i&space;&plus;b$$" title="$$y = ax_i +b$$" /></a>中，求出预测值。
 
-### 确定损失函数
+### 损失函数
 
-#### 确定损失函数的方法
+#### 损失函数的方法
 * 最小二乘法
 
 * 最大似然估计
 
-#### 确定目标函数(损失函数中添加正则项)
+#### 目标函数(损失函数+正则项)
 * L1正则化(L1范数)
+L1 正则化通常称为 Lasso 回归，它和一般线性回归的区别是在损失函数上增加了一个 L1 正则化的项，L1 正则化的项有一个常数系数 α 来调节损失函数的均方差项和正则化项的权重，具体 Lasso 回归的损失函数表达式如下：　　
+ 
+<a href="http://www.codecogs.com/eqnedit.php?latex=J(\theta)&space;=&space;\frac{1}{2n}(X\theta-Y)^T(X\theta-Y)&plus;\alpha&space;\begin{Vmatrix}&space;\theta&space;\end{Vmatrix}_1" target="_blank"><img src="http://latex.codecogs.com/gif.latex?J(\theta)&space;=&space;\frac{1}{2n}(X\theta-Y)^T(X\theta-Y)&plus;\alpha&space;\begin{Vmatrix}&space;\theta&space;\end{Vmatrix}_1" title="J(\theta) = \frac{1}{2n}(X\theta-Y)^T(X\theta-Y)+\alpha \begin{Vmatrix} \theta \end{Vmatrix}_1" /></a>
+ 
+ 其中 n 为样本个数，α 为常数系数，需要进行调优。<a href="http://www.codecogs.com/eqnedit.php?latex=\begin{Vmatrix}&space;\theta&space;\end{Vmatrix}_1" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\begin{Vmatrix}&space;\theta&space;\end{Vmatrix}_1" title="\begin{Vmatrix} \theta \end{Vmatrix}_1" /></a>
+为 L1 范数。
+
+Lasso 回归可以使得一些特征的系数变小，甚至还是一些绝对值较小的系数直接变为 0。增强模型的泛化能力。
+
+Lasso 回归的求解办法一般有坐标轴下降法（coordinate descent）和最小角回归法（ Least Angle Regression）
 
 * L2正则化(L2范数)
+线性回归的 L2 正则化通常称为 Ridge 回归，它和一般线性回归的区别是在损失函数上增加了一个 L2 正则化的项，和 Lasso 回归的区别是 Ridge 回归的正则化项是 L2 范数，而 Lasso 回归的正则化项是 L1 范数。具体 Ridge 回归的损失函数表达式如下：
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=J(\theta)&space;=&space;\frac{1}{2n}(X\theta-Y)^T(X\theta-Y)&plus;\frac{1}{2}\alpha&space;\begin{Vmatrix}&space;\theta&space;\end{Vmatrix}_2^2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?J(\theta)&space;=&space;\frac{1}{2n}(X\theta-Y)^T(X\theta-Y)&plus;\frac{1}{2}\alpha&space;\begin{Vmatrix}&space;\theta&space;\end{Vmatrix}_2^2" title="J(\theta) = \frac{1}{2n}(X\theta-Y)^T(X\theta-Y)+\frac{1}{2}\alpha \begin{Vmatrix} \theta \end{Vmatrix}_2^2" /></a>
+
+其中 α 为常数系数，需要进行调优。<a href="http://www.codecogs.com/eqnedit.php?latex=\begin{Vmatrix}&space;\theta&space;\end{Vmatrix}_2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\begin{Vmatrix}&space;\theta&space;\end{Vmatrix}_2" title="\begin{Vmatrix} \theta \end{Vmatrix}_2" /></a>为 L2 范数。
+
+Ridge 回归在不抛弃任何一个特征的情况下，缩小了回归系数，使得模型相对而言比较的稳定，但和 Lasso 回归比，这会使得模型的特征留的特别多，模型解释性差。
+
+Ridge 回归的求解比较简单，一般用最小二乘法。
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### 公式推导
