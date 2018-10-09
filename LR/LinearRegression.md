@@ -73,7 +73,7 @@
 ### 梯度下降法简介
 以下是定义了一个损失函数以后，参数 theta 对应的损失函数 J 的值对应的示例图， 
 我们需要找到使得损失函数值 J 取得最小值对应的 theta（这里是二维平面，也就是说数据集的特征只有一个）， 在直线方程中，导数代表斜率； 在曲线方程中，导数代表切线斜率。这里导数即为梯度。
-![image](picture/一元梯度下降.PNG)
+![image](picture/梯度下降1.png)
 
 称为学习率，它是梯度下降法的一个超参数，它的取值反映获得最优解的速度，取值不合适时甚至得不到最优解。
 
@@ -119,3 +119,5 @@ GridSearchCV网格搜索出来的最优超参数使用的评价标准是GridSear
 [numpy.array的基本操作](https://blog.csdn.net/sinat_34474705/article/details/74458605)
 
 [numpy.hstack和numpy.vstack操作](https://blog.csdn.net/m0_37393514/article/details/79538748)
+
+[线性模型 ——YYT](https://github.com/yangyyt/powerToGrow/blob/master/AlgorithmReview/LinearModel.ipynb)
