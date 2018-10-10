@@ -179,13 +179,16 @@
   <a href="http://www.codecogs.com/eqnedit.php?latex=$$\theta&space;_j^i&space;=&space;\theta&space;_j^i&space;-&space;\eta&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x^i$$" target="_blank"><img src="http://latex.codecogs.com/gif.latex?$$\theta&space;_j^i&space;=&space;\theta&space;_j^i&space;-&space;\eta&space;\sum_{i=1}^{m}(y^{(i)}&space;-&space;\hat&space;y^{(i)})^{2}x^i$$" title="$$\theta _j^i = \theta _j^i - \eta \sum_{i=1}^{m}(y^{(i)} - \hat y^{(i)})^{2}x^i$$" /></a>
   
 
-## 5 在三维平面，数据集的特征有两个的情况：
+## 5 数据集存在多个特征
+
+### 5.1在三维平面，数据集的特征有两个的情况
+
 ![image](picture/梯度下降2.png)
 
-### 5.1 注意
+### 5.2 注意
 并不是所有的损失函数用梯度下降法都能够找到全局的最优解，有可能是一个局部最优解。 当然，如果损失函数是凸函数，梯度下降法得到的解就一定是全局最优解。
 
-### 5.2 解决方案
+### 5.3 解决方案
 * 多次运行，随机化初始点
 
 * 梯度下降法的初始点也是一个超参数
